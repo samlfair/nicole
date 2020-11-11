@@ -1,5 +1,6 @@
 <template>
   <NuxtLink :to="'/' + post.uid">
+    <img :src="post.data.thumbnail.square.url" :alt="post.data.thumbnail.alt" />
     <h2>{{ post.data.title }}</h2>
   </NuxtLink>
 </template>
@@ -12,3 +13,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+img {
+  width: 100%;
+}
+</style>
