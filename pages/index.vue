@@ -1,8 +1,8 @@
 <template>
   <div>
-    <Header />
+    <Header :config="config" />
     <PostGrid :posts="document" />
-    <Footer />
+    <Footer :text="config.data.footer" />
   </div>
 </template>
 

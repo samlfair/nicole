@@ -1,8 +1,8 @@
 <template>
   <div>
-    <Header />
+    <Header :config="config" />
     <slice-zone type="post" :uid="$route.params.uid" />
-    <Footer />
+    <Footer :text="config.data.footer" />
   </div>
 </template>
 
@@ -16,6 +16,18 @@ export default {
     SliceZone,
     Header,
     Footer,
+  },
+  async asyncData({ $prismic, params, error }) {
+    const config = (
+      await $prismic.api.query(
+        $prismic.predicates.at("document.type", "config")
+      )
+    ).results[0];
+    if (config) {
+      return { config };
+    } else {
+      error({ statusCode: 404, message: "Page not found" });
+    }
   },
 };
 </script>

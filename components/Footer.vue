@@ -1,10 +1,13 @@
 <template>
-  <div class="footer">© Nicole Giacomantonio, 2020</div>
+  <div class="footer">{{ text }}</div>
 </template>
 
 <script>
 export default {
   name: "Footer",
+  props: {
+    text: String,
+  },
 };
 </script>
 
