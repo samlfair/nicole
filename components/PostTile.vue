@@ -18,4 +18,11 @@ export default {
 img {
   width: 100%;
 }
+
+h2 {
+  font-family: "Nunito", sans-serif;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
 </style>

@@ -1,19 +1,21 @@
 <template>
   <div>
-    <NuxtLink to="/">
-      <h1>Nicole's site</h1>
-    </NuxtLink>
+    <Header />
     <slice-zone type="post" :uid="$route.params.uid" />
+    <Footer />
   </div>
 </template>
 
 <script>
 import SliceZone from "vue-slicezone";
+import { Header, Footer } from "~/components";
 
 export default {
   name: "post",
   components: {
     SliceZone,
+    Header,
+    Footer,
   },
 };
 </script>

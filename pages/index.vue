@@ -1,16 +1,17 @@
 <template>
   <div>
-    <h1>Nicole's site</h1>
+    <Header />
     <PostGrid :posts="document" />
+    <Footer />
   </div>
 </template>
 
 <script>
-import { PostGrid } from "~/components";
+import { PostGrid, Header, Footer } from "~/components";
 
 export default {
   name: "Home",
-  components: { PostGrid },
+  components: { PostGrid, Header, Footer },
   async asyncData({ $prismic, params, error }) {
     const document = (await $prismic.api.query("")).results;
     if (document) {
