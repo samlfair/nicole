@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h1>Post Page</h1>
+    <NuxtLink to="/">
+      <h1>Nicole's site</h1>
+    </NuxtLink>
     <slice-zone type="post" :uid="$route.params.uid" />
   </div>
 </template>
@@ -11,8 +13,8 @@ import SliceZone from "vue-slicezone";
 export default {
   name: "post",
   components: {
-    SliceZone
-  }
+    SliceZone,
+  },
 };
 </script>
 

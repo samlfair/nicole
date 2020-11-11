@@ -1,19 +1,16 @@
 <template>
   <div>
     <h1>Nicole's site</h1>
-    <ul>
-      <li v-for="article in document" :key="article.id">
-        <NuxtLink :to="'/' + article.uid">
-          <h2>{{ article.data.title }}</h2>
-        </NuxtLink>
-      </li>
-    </ul>
+    <PostGrid :posts="document" />
   </div>
 </template>
 
 <script>
+import { PostGrid } from "~/components";
+
 export default {
   name: "Home",
+  components: { PostGrid },
   async asyncData({ $prismic, params, error }) {
     const document = (await $prismic.api.query("")).results;
     if (document) {

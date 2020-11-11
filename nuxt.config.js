@@ -37,7 +37,7 @@ export default {
     ]
   },
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  // css: ["vue-essential-slices/src/styles/styles.scss"],
+  css: ["@/assets/resetr.css", "@/assets/common.css"],
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [],
   // Auto import components (https://go.nuxtjs.dev/config-components)
