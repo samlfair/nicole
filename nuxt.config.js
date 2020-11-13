@@ -50,6 +50,7 @@ export default {
       "@nuxtjs/prismic",
       {
         endpoint: "https://nicolegiaco.cdn.prismic.io/api/v2",
+        preview: "/preview",
         apiOptions: {
           routes: [
             {
