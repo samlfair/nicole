@@ -3,7 +3,6 @@ export default {
   target: "static",
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: "nicole",
     meta: [
       {
         charset: "utf-8"
@@ -11,18 +10,14 @@ export default {
       {
         name: "viewport",
         content: "width=device-width, initial-scale=1"
-      },
-      {
-        hid: "description",
-        name: "description",
-        content: ""
       }
     ],
     link: [
       {
         rel: "icon",
-        type: "image/x-icon",
-        href: "/favicon.ico"
+        type: "image/svg+xml",
+        href:
+          "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-size=%2284%22>🧶</text></svg>"
       },
       {
         rel: "stylesheet",
@@ -58,7 +53,7 @@ export default {
         apiOptions: {
           routes: [
             {
-              type: "page",
+              type: "post",
               path: "/:uid"
             }
           ]

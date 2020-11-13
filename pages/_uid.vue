@@ -31,6 +31,24 @@ export default {
       error({ statusCode: 404, message: "Page not found" });
     }
   },
+  head() {
+    return {
+      title: this.post.title + " - " + this.config.data.site_title,
+      meta: [
+        {
+          name: "og:title",
+          content: this.post.title + " - " + this.config.data.site_title,
+        },
+        { name: "description", content: this.post.preview_text },
+        { name: "og:description", content: this.post.preview_text },
+        { name: "robots", content: "index, follow" },
+        {
+          property: "og:image",
+          content: this.post.thumbnail.social.url,
+        },
+      ],
+    };
+  },
 };
 </script>
 
