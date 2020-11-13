@@ -51,6 +51,7 @@ export default {
       {
         endpoint: "https://nicolegiaco.cdn.prismic.io/api/v2",
         preview: "/preview",
+        linkResolver: "@/plugins/link-resolver",
         apiOptions: {
           routes: [
             {
