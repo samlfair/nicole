@@ -1,7 +1,13 @@
 <template>
   <header class="header">
-    <img :src="config.data.header_image.square.url" alt="nicole" />
-    <h1>{{ config.data.site_title }}</h1>
+    <nuxt-link to="/">
+      <img :src="config.data.header_image.square.url" alt="nicole" />
+    </nuxt-link>
+    <div class="site-title">
+      <nuxt-link to="/">
+        {{ config.data.site_title }}
+      </nuxt-link>
+    </div>
     <nav class="nav">
       <ul>
         <li v-for="item in config.data.main_menu" :key="item.label">
@@ -24,7 +30,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h1 {
+.site-title {
   font-family: "Nunito", sans-serif;
   text-align: center;
   font-size: 1.5rem;
@@ -45,11 +51,19 @@ h1 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 4rem;
     font-size: 0.8rem;
     color: #777;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    // letter-spacing: 1px;
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+      helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial,
+      sans-serif;
+    li {
+      margin-right: 7vw;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
   }
 }
 

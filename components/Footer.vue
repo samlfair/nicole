@@ -16,6 +16,6 @@ export default {
   text-align: center;
   font-size: 0.8rem;
   color: #999;
-  padding: 4rem 20%;
+  padding: 8rem 20% 4rem;
 }
 </style>

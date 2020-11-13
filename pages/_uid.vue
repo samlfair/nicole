@@ -1,6 +1,7 @@
 <template>
   <div>
     <Header :config="config" />
+    <h1>{{ post.title }}</h1>
     <slice-zone type="post" :uid="$route.params.uid" />
     <Footer :text="config.data.footer" />
   </div>
@@ -23,8 +24,9 @@ export default {
         $prismic.predicates.at("document.type", "config")
       )
     ).results[0];
-    if (config) {
-      return { config };
+    const post = (await $prismic.api.getByUID("post", params.uid)).data;
+    if (post && config) {
+      return { post, config };
     } else {
       error({ statusCode: 404, message: "Page not found" });
     }
@@ -32,4 +34,23 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+h1 {
+  font-weight: 800;
+  font-size: 3rem;
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+    helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+h1:after {
+  content: "";
+  margin: 1rem 0px 2rem;
+  height: 7px;
+  // http://www.patternify.com/
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAARklEQVQoU2NkQAObN2/+7+vry4gujiIAUgRTgK4YrhCmCKQAmQ3TCFaITQJdDKtumCnIisEKsTkeXTGG79B9C3MaUQpBigEIqio5SSyvtwAAAABJRU5ErkJggg==)
+    repeat;
+}
+</style>

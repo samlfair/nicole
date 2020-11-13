@@ -6,7 +6,7 @@
 
 <style lang="scss" scoped>
 .layout {
-  max-width: 700px;
+  max-width: 750px;
   margin: auto;
   padding: 20px;
 }
