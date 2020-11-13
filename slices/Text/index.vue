@@ -16,6 +16,7 @@ export default {
 ::v-deep {
   p {
     margin-top: 1rem;
+    line-height: 1.5rem;
     font-family: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman,
       Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji,
       Segoe UI Emoji, Segoe UI Symbol;

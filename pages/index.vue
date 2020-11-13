@@ -14,7 +14,10 @@ export default {
   components: { PostGrid, Header, Footer },
   async asyncData({ $prismic, params, error }) {
     const document = (
-      await $prismic.api.query($prismic.predicates.at("document.type", "post"))
+      await $prismic.api.query([
+        $prismic.predicates.at("document.type", "post"),
+        $prismic.predicates.at("my.post.tag", "X66XzxIAACEAZ6pM"),
+      ])
     ).results;
     const config = (
       await $prismic.api.query(
