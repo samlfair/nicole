@@ -1,6 +1,6 @@
 <template>
   <div class="featured">
-    <PostGrid :posts="document" />
+    <PostGrid :posts="posts" />
   </div>
 </template>
 
@@ -14,9 +14,12 @@ export default {
     slice: Object,
     document: Object
   },
+  data() {
+    return {posts: undefined}
+  },
   async fetch() {
     try {
-      this.document = (await this.$prismic.api.query(
+      this.posts = (await this.$prismic.api.query(
         [
         this.$prismic.predicates.at("document.type", "post"),
         this.$prismic.predicates.at("my.post.tag", this.slice.primary.featured_tag.id),
