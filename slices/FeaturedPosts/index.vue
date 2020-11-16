@@ -22,7 +22,7 @@ export default {
       this.posts = (await this.$prismic.api.query(
         [
         this.$prismic.predicates.at("document.type", "post"),
-        this.$prismic.predicates.at("my.post.tag", this.slice.primary.featured_tag.id),
+        this.$prismic.predicates.at("my.post.tags.tag", this.slice.primary.featured_tag.id),
       ]
       )).results;
     } catch (e) {
