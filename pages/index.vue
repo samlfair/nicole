@@ -1,31 +1,31 @@
 <template>
   <div>
     <Header :config="config" />
-    <PostGrid :posts="document" />
+    <slice-zone type="post" uid="home" />
     <Footer :text="config.data.footer" />
   </div>
 </template>
 
 <script>
-import { PostGrid, Header, Footer } from "~/components";
+import SliceZone from "vue-slicezone";
+import { Header, Footer } from "~/components";
 
 export default {
   name: "Home",
-  components: { PostGrid, Header, Footer },
+  components: {
+    SliceZone,
+    Header,
+    Footer,
+  },
   async asyncData({ $prismic, params, error }) {
-    const document = (
-      await $prismic.api.query([
-        $prismic.predicates.at("document.type", "post"),
-        $prismic.predicates.at("my.post.tag", "X66XzxIAACEAZ6pM"),
-      ])
-    ).results;
     const config = (
       await $prismic.api.query(
         $prismic.predicates.at("document.type", "config")
       )
     ).results[0];
-    if (document && config) {
-      return { document, config };
+    const post = (await $prismic.api.getByUID("post", "home")).data;
+    if (post && config) {
+      return { post, config };
     } else {
       error({ statusCode: 404, message: "Page not found" });
     }
@@ -51,5 +51,3 @@ export default {
   },
 };
 </script>
-
-<style></style>

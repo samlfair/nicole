@@ -1,6 +1,6 @@
 <template>
   <div class="featured">
-    <PostGrid :posts="posts" />
+    <PostGrid :posts="posts" :max="slice.primary.number || 20" />
   </div>
 </template>
 
