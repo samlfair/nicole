@@ -24,8 +24,8 @@
 export default {
   name: "Header",
   props: {
-    config: Object,
-  },
+    config: Object
+  }
 };
 </script>
 
@@ -68,7 +68,7 @@ export default {
 }
 
 img {
-  border-radius: 50%;
+  // border-radius: 50%;
   width: 200px;
   height: 200px;
 }
