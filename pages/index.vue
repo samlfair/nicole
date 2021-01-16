@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header :config="config" />
-    <slice-zone type="post" uid="home" />
+    <slice-zone type="post" uid="home" :params="{fetchLinks: 'post.title'}" />
     <Footer :text="config.data.footer" />
   </div>
 </template>

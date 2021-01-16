@@ -1,7 +1,7 @@
 <template>
   <ul>
     <li v-for="(post, i) in posts" :key="post.id">
-      <PostTile v-if="(i < max)" :post="post" />
+      <PostTile v-if="(i < max || !max)" :post="post" />
     </li>
   </ul>
 </template>

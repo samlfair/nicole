@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="'/' + post.uid">
+  <NuxtLink v-if="post.uid" :to="'/' + post.uid">
     <img :src="post.data.thumbnail.square.url" :alt="post.data.thumbnail.alt" />
     <h2>{{ post.data.title }}</h2>
   </NuxtLink>

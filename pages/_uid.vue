@@ -2,7 +2,7 @@
   <div>
     <Header :config="config" />
     <h1>{{ post.title }}</h1>
-    <slice-zone type="post" :uid="$route.params.uid" />
+    <slice-zone type="post" :uid="$route.params.uid" :params="{fetchLinks: ['post.title', 'post.thumbnail', 'post.preview_text']}"/>
     <Footer :text="config.data.footer" />
   </div>
 </template>
