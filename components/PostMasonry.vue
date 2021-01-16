@@ -1,6 +1,6 @@
 <template>
-  <div class="masonry">
-    <div class="col">
+  <div class="masonry" :style="cssGridGap">
+    <div class="col" :style="cssGap">
       <template v-for="(post, i) in posts">
         <template>
           <MasonryTile
@@ -10,9 +10,8 @@
           />
         </template>
       </template>
-      <div></div>
     </div>
-    <div class="col">
+    <div class="col" :style="cssGap">
       <template v-for="(post, i) in posts">
         <template>
           <MasonryTile
@@ -23,7 +22,7 @@
         </template>
       </template>
     </div>
-    <div class="col">
+    <div class="col" :style="cssGap">
       <template v-for="(post, i) in posts">
         <template>
           <MasonryTile
@@ -46,6 +45,15 @@ export default {
   props: {
     posts: Array,
     max: Number,
+    gap: Number,
+  },
+  computed: {
+    cssGap() {
+      return { gap: this.gap + "px" };
+    },
+    cssGridGap() {
+      return { gridGap: this.gap + "px" };
+    },
   },
 };
 </script>

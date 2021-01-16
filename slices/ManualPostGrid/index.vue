@@ -1,31 +1,33 @@
 <template>
   <div class="featured">
-    Manual Post Grid
-    <PostMasonry :posts="posts" />
-    <PostGrid :posts="posts" />
+    <template v-if="slice.primary.display === 'masonry'">
+      <PostMasonry :gap="slice.primary.gap || 3" :posts="posts" />
+    </template>
+    <template else>
+      <PostGrid :gap="slice.primary.gap || 3" :posts="posts" />
+    </template>
   </div>
 </template>
 
 <script>
 import { PostGrid, PostMasonry } from "~/components";
 
-
 export default {
   name: "ManualPostGrid",
-  components: {PostGrid, PostMasonry},
+  components: { PostGrid, PostMasonry },
   props: {
     slice: Object,
-    document: Object
+    document: Object,
   },
   computed: {
     posts() {
-      return this.slice.items.map(item => {
+      return this.slice.items.map((item) => {
         // let data = item.post
-        return item.post
+        return item.post;
         // item.post
-        })
-    }
-  }
+      });
+    },
+  },
 };
 </script>
 

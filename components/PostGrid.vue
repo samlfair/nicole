@@ -1,7 +1,7 @@
 <template>
   <ul>
     <li v-for="(post, i) in posts" :key="post.id">
-      <PostTile v-if="(i < max || !max)" :post="post" />
+      <PostTile v-if="i < max || !max" :post="post" />
     </li>
   </ul>
 </template>
@@ -15,6 +15,7 @@ export default {
   props: {
     posts: Array,
     max: Number,
+    gap: Number,
   },
 };
 </script>
