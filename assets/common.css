@@ -1,0 +1,7 @@
+a:only-child .button:only-child,
+.button:only-child a:only-child {
+  border: 1px solid red;
+  margin: 1rem 0;
+  padding: 20px;
+  align-self: center;
+}

@@ -15,7 +15,7 @@ export default {
   components: {
     SliceZone,
     Header,
-    Footer,
+    Footer
   },
   async asyncData({ $prismic, params, error }) {
     const config = (
@@ -37,17 +37,24 @@ export default {
         {
           name: "og:title",
           content:
-            this.config.data.site_title + " - " + this.config.data.tagline,
+            this.config.data.site_title + " - " + this.config.data.tagline
         },
         { name: "description", content: this.config.data.site_description },
         { name: "og:description", content: this.config.data.site_description },
         { name: "robots", content: "index, follow" },
         {
           property: "og:image",
-          content: this.config.data.header_image.social.url,
-        },
+          content: this.config.data.header_image.social.url
+        }
       ],
+      link: [
+        {
+          rel: "icon",
+          type: "image/svg+xml",
+          href: `data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-size=%2284%22>${this.config.data.favicon}</text></svg>`
+        }
+      ]
     };
-  },
+  }
 };
 </script>
