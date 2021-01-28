@@ -3,7 +3,7 @@
     <template v-if="slice.primary.display === 'masonry'">
       <PostMasonry :gap="slice.primary.gap || 3" :posts="posts" />
     </template>
-    <template else>
+    <template v-if="slice.primary.display === 'squares'">
       <PostGrid :gap="slice.primary.gap || 3" :posts="posts" />
     </template>
   </div>
@@ -17,17 +17,17 @@ export default {
   components: { PostGrid, PostMasonry },
   props: {
     slice: Object,
-    document: Object,
+    document: Object
   },
   computed: {
     posts() {
-      return this.slice.items.map((item) => {
+      return this.slice.items.map(item => {
         // let data = item.post
         return item.post;
         // item.post
       });
-    },
-  },
+    }
+  }
 };
 </script>
 

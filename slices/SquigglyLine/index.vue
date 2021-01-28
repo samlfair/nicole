@@ -12,13 +12,9 @@ export default {
   },
   computed: {
     padding() {
-      const {
-        top_space = 20,
-        squiggle_size,
-        bottom_space = 20
-      } = this.slice.primary;
-      const paddingTop = top_space + "px";
-      const paddingBottom = bottom_space + "px";
+      const { top_space, bottom_space } = this.slice.primary;
+      const paddingTop = (top_space ?? 20) + "px";
+      const paddingBottom = (bottom_space ?? 20) + "px";
       return { paddingTop, paddingBottom };
     },
     animated() {

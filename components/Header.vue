@@ -1,13 +1,5 @@
 <template>
   <header class="header">
-    <nuxt-link to="/">
-      <img :src="config.data.header_image.square.url" alt="nicole" />
-    </nuxt-link>
-    <div class="site-title">
-      <nuxt-link to="/">
-        {{ config.data.site_title }}
-      </nuxt-link>
-    </div>
     <nav class="nav">
       <ul>
         <li v-for="item in config.data.main_menu" :key="item.label">
@@ -17,6 +9,9 @@
         </li>
       </ul>
     </nav>
+    <nuxt-link to="/">
+      <img :src="config.data.title_image.url" alt="nicole" />
+    </nuxt-link>
   </header>
 </template>
 
@@ -40,18 +35,23 @@ export default {
 
 .header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
   padding: 2rem 0;
 }
 
 .nav {
+  .nuxt-link-active {
+    box-shadow: 0px 2px #ccc;
+  }
   // width: 80%;
   ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: #777;
     text-transform: uppercase;
     // letter-spacing: 1px;
@@ -59,7 +59,7 @@ export default {
       helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial,
       sans-serif;
     li {
-      margin-right: 7vw;
+      margin-right: 20px;
       &:last-child {
         margin-right: 0;
       }
@@ -69,7 +69,7 @@ export default {
 
 img {
   // border-radius: 50%;
-  width: 200px;
-  height: 200px;
+  width: auto;
+  height: 40px;
 }
 </style>

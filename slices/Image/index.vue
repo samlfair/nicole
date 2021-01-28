@@ -12,13 +12,14 @@
 export default {
   name: "Image",
   props: {
-    slice: Object,
-  },
+    slice: Object
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 .box {
+  padding: 30px 0px;
   width: 100%;
   // height: 60vw;
   // max-height: 500px;

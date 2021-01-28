@@ -8,26 +8,26 @@
 export default {
   name: "Text",
   props: {
-    slice: Object,
-  },
+    slice: Object
+  }
 };
 </script>
 <style lang="scss" scoped>
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
+
 ::v-deep {
   p {
     margin-top: 1rem;
     line-height: 1.5rem;
-    font-family: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman,
-      Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji,
-      Segoe UI Emoji, Segoe UI Symbol;
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+      helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial,
+      sans-serif;
   }
   h2 {
     font-size: 2rem;
     margin-top: 2rem;
     font-weight: 700;
-    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
-      helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial,
-      sans-serif;
+    font-family: "DM Serif Display", serif;
   }
 }
 </style>

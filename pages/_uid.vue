@@ -1,8 +1,13 @@
 <template>
   <div>
     <Header :config="config" />
-    <h1>{{ post.title }}</h1>
-    <slice-zone type="post" :uid="$route.params.uid" :params="{fetchLinks: ['post.title', 'post.thumbnail', 'post.preview_text']}"/>
+    <slice-zone
+      type="post"
+      :uid="$route.params.uid"
+      :params="{
+        fetchLinks: ['post.title', 'post.thumbnail', 'post.preview_text']
+      }"
+    />
     <Footer :text="config.data.footer" />
   </div>
 </template>
@@ -58,24 +63,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" scoped>
-h1 {
-  font-weight: 800;
-  font-size: 3rem;
-  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
-    helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  margin-top: 2rem;
-}
-
-h1:after {
-  content: "";
-  margin: 1rem 0px 2rem;
-  height: 7px;
-  // http://www.patternify.com/
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAARklEQVQoU2NkQAObN2/+7+vry4gujiIAUgRTgK4YrhCmCKQAmQ3TCFaITQJdDKtumCnIisEKsTkeXTGG79B9C3MaUQpBigEIqio5SSyvtwAAAABJRU5ErkJggg==)
-    repeat;
-}
-</style>
