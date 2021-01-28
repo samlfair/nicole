@@ -1,5 +1,26 @@
 # nicole
 
+Website for Nicole G. Built with Nuxt and Prismic.
+
+Site structure:
+
+```plaintext
+.
+└── Homepage (name, menu, image)
+    ├── Textiles (masonry grid of images)
+    │   ├── Individual item
+    │   └── More individual items...
+    ├── Illustrations
+    │   ├── Animation (list of videos)
+    │   ├── Cards (grid of cards linked to shop)
+    │   └── Design (beer label masonry grid, cutouts grid, squiggly line / divider image)
+    │       └── Detail pages (back button)
+    ├── Cafe Hotdog (masonry grid of baked goods)
+    │   └── Detail pages
+    ├── About (text, photo, form)
+    └── Shop
+```
+
 ## Build Setup
 
 ```bash
