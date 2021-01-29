@@ -14,6 +14,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,200;1,200&display=swap");
 
 ::v-deep {
   p {
@@ -28,6 +29,8 @@ export default {
     margin-top: 2rem;
     font-weight: 700;
     font-family: "DM Serif Display", serif;
+    font-family: "Fraunces", serif;
+    // font-style: italic;
   }
 }
 </style>
