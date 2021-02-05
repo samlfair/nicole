@@ -1,10 +1,22 @@
 <template>
   <div class="box">
-    <img
-      class="image"
-      :src="slice.primary.image.fixedWidth.url"
-      :alt="slice.primary.image.fixedWidth.url"
-    />
+    <prismic-link
+      :field="slice.primary.link"
+      v-if="slice.primary.link.link_type !== 'Any'"
+    >
+      <img
+        class="image"
+        :src="slice.primary.image.fixedWidth.url"
+        :alt="slice.primary.image.fixedWidth.url"
+      />
+    </prismic-link>
+    <template v-else>
+      <img
+        class="image"
+        :src="slice.primary.image.fixedWidth.url"
+        :alt="slice.primary.image.fixedWidth.url"
+      />
+    </template>
   </div>
 </template>
 

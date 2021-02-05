@@ -28,9 +28,17 @@ export default {
     font-size: 2rem;
     margin-top: 2rem;
     font-weight: 700;
-    font-family: "DM Serif Display", serif;
+    // font-family: "DM Serif Display", serif;
     font-family: "Fraunces", serif;
     // font-style: italic;
+  }
+  h3 {
+    font-size: 1.7rem;
+    margin-top: 2rem;
+    font-weight: 700;
+    // font-family: "DM Serif Display", serif;
+    font-family: "Fraunces", serif;
+    font-style: italic;
   }
 }
 </style>
