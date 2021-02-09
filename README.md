@@ -2,6 +2,10 @@
 
 Website for Nicole G. Built with Nuxt and Prismic.
 
+## To Do
+
+- [ ] Video Slice
+
 Site structure:
 
 ```plaintext
