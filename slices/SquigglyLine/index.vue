@@ -1,6 +1,9 @@
 <template>
-  <div :style="padding">
-    <div :class="{ animated }" class="squiggle"></div>
+  <div id="app">
+    <div :style="paddingStyles">
+      <div :style="[squiggleStyles]" class="squiggle"></div>
+      <div :style="[squiggleStyles, bottom]" class="squiggle bottom"></div>
+    </div>
   </div>
 </template>
 
@@ -11,85 +14,86 @@ export default {
     slice: Object
   },
   computed: {
-    padding() {
+    innerRadius() {
+      return (50 * this.slice.primary.size) / 100;
+    },
+    thickness() {
+      return this.slice.primary.thickness;
+    },
+    offset() {
+      return (this.slice.primary.squiggliness / 100) * this.innerRadius;
+    },
+    color() {
+      return this.slice.primary.color;
+    },
+    radius() {
+      const { innerRadius, thickness } = this;
+      return innerRadius + thickness / 2;
+    },
+    outerRadius() {
+      const { innerRadius, thickness } = this;
+      return innerRadius + thickness;
+    },
+    qrtWidth() {
+      const { radius, offset } = this;
+      return Math.sqrt(radius ** 2 - offset ** 2);
+    },
+    width() {
+      return this.qrtWidth * 4;
+    },
+    squiggleStyles() {
+      const {
+        innerRadius,
+        thickness,
+        offset,
+        color,
+        outerRadius,
+        width
+      } = this;
+      return {
+        height: outerRadius - offset + "px",
+        backgroundSize: width + "px " + outerRadius + "px",
+        backgroundImage: `radial-gradient(
+          circle at bottom,
+          transparent ${innerRadius}px,
+          ${color} ${innerRadius + 1}px,
+          ${color} ${innerRadius + thickness - 1}px,
+          transparent ${innerRadius + thickness}px
+        )`
+      };
+    },
+    bottom() {
+      const { width } = this;
+      return {
+        backgroundPosition: `${width / 2}px 0px`
+      };
+    },
+    paddingStyles() {
       const { top_space, bottom_space } = this.slice.primary;
       const paddingTop = (top_space ?? 20) + "px";
       const paddingBottom = (bottom_space ?? 20) + "px";
       return { paddingTop, paddingBottom };
-    },
-    animated() {
-      const { animated = false } = this.slice.primary;
-      return animated;
     }
   }
 };
 </script>
 
-<style lang="scss" scoped>
-.animated {
-  --animation-duration: 9s;
-  &::before,
-  &::after {
-    animation-duration: var(--animation-duration);
-    animation-iteration-count: infinite;
-    animation-play-state: running;
-    animation-timing-function: linear;
-  }
-  &::before {
-    animation-name: before;
-  }
-  &::after {
-    animation-name: after;
-  }
-}
-
+<style lang="scss">
 .squiggle {
-  --height: 80px;
-  --half: calc(var(--height) / 2);
-  --quarter: calc(var(--height) / 4);
-
-  height: var(--half);
-  display: flex;
-  flex-direction: column;
-  &::before,
-  &::after {
-    content: "";
-    width: 100%;
-    height: 50%;
-    background-image: radial-gradient(
-      circle at center,
-      transparent 28%,
-      black 31%,
-      black 39%,
-      transparent 42%
-    );
-    background-size: var(--half) var(--half); // width, height
-  }
-  &::before {
-    // background: green;
-    background-position: 0px 0px; // x, y
-  }
-  &::after {
-    // background: yellow;
-    background-position: var(--quarter) calc(-1 * var(--quarter)); // x, y
-  }
+  width: 100%;
+  height: 30px;
+  background-image: radial-gradient(
+    circle at bottom,
+    transparent 20px,
+    #000 20px,
+    #000 30px,
+    transparent 30px
+  );
+  background-size: 80px 30px;
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
 }
-
-@keyframes before {
-  from {
-    background-position: 0px 0px; // x, y
-  }
-  to {
-    background-position: calc(-1 * var(--half)) 0px;
-  }
-}
-
-@keyframes after {
-  from {
-    background-position: var(--quarter) calc(-1 * var(--quarter));
-  }
-  to {
-    background-position: calc(-1 * var(--quarter)) calc(-1 * var(--quarter));
-  }
+.bottom {
+  transform: scaleY(-1);
 }
 </style>

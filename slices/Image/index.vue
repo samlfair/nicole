@@ -5,6 +5,7 @@
       v-if="slice.primary.link.link_type !== 'Any'"
     >
       <img
+        :style="widthStyle"
         class="image"
         :src="slice.primary.image.fixedWidth.url"
         :alt="slice.primary.image.fixedWidth.url"
@@ -12,6 +13,7 @@
     </prismic-link>
     <template v-else>
       <img
+        :style="widthStyle"
         class="image"
         :src="slice.primary.image.fixedWidth.url"
         :alt="slice.primary.image.fixedWidth.url"
@@ -25,6 +27,12 @@ export default {
   name: "Image",
   props: {
     slice: Object
+  },
+  computed: {
+    widthStyle() {
+      // comput max width as a size relative to size on big screens
+      return { maxWidth: (this.slice.primary.width || 100) + "%" };
+    }
   }
 };
 </script>
@@ -41,6 +49,6 @@ export default {
 
 .image {
   width: 100%;
-  max-width: 500px;
+  // max-width: 500px;
 }
 </style>
