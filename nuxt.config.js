@@ -61,5 +61,12 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     transpile: ["vue-slicezone", "nuxt-sm"]
-  }
+  },
+  storybook: {
+    stories: [
+      "~/slices/**/*.stories.js",
+      "~/node_modules/sams-slices/src/slices/**/*.stories.js"
+    ]
+  },
+  ignore: ["**/*.stories.js"]
 };

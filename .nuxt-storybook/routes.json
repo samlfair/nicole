@@ -1,0 +1,22 @@
+[
+  {
+    "name": "prismic-preview",
+    "path": "/preview",
+    "component": "/Users/samlittlefair/Documents/asides/nicole/.nuxt-storybook/prismic/pages/preview.vue",
+    "_name": "_6b29f56c"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/samlittlefair/Documents/asides/nicole/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_1d8286b7"
+  },
+  {
+    "name": "uid",
+    "path": "/:uid",
+    "component": "/Users/samlittlefair/Documents/asides/nicole/pages/_uid.vue",
+    "chunkName": "pages/_uid",
+    "_name": "_70b85888"
+  }
+]
