@@ -7,7 +7,7 @@
       <img
         :style="widthStyle"
         class="image"
-        :src="slice.primary.image.fixedWidth.url"
+        :src="uncompressed()"
         :alt="slice.primary.image.fixedWidth.url"
       />
     </prismic-link>
@@ -15,7 +15,7 @@
       <img
         :style="widthStyle"
         class="image"
-        :src="slice.primary.image.fixedWidth.url"
+        :src="uncompressed()"
         :alt="slice.primary.image.fixedWidth.url"
       />
     </template>
@@ -32,6 +32,12 @@ export default {
     widthStyle() {
       // comput max width as a size relative to size on big screens
       return { maxWidth: (this.slice.primary.width || 100) + "%" };
+    }
+  },
+  methods: {
+    uncompressed() {
+      const { url } = this.slice.primary.image.fixedWidth;
+      return url.replace("compress", "");
     }
   }
 };
