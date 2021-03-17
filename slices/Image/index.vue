@@ -9,6 +9,8 @@
         class="image"
         :src="uncompressed()"
         :alt="slice.primary.image.fixedWidth.url"
+        :width="slice.primary.image.fixedWidth.dimensions.width"
+        :height="slice.primary.image.fixedWidth.dimensions.height"
       />
     </prismic-link>
     <template v-else>
@@ -17,6 +19,8 @@
         class="image"
         :src="uncompressed()"
         :alt="slice.primary.image.fixedWidth.url"
+        :width="slice.primary.image.fixedWidth.dimensions.width"
+        :height="slice.primary.image.fixedWidth.dimensions.height"
       />
     </template>
   </div>
@@ -55,6 +59,7 @@ export default {
 
 .image {
   width: 100%;
+  height: auto;
   // max-width: 500px;
 }
 </style>

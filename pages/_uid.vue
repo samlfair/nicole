@@ -36,9 +36,17 @@ export default {
       error({ statusCode: 404, message: "Page not found" });
     }
   },
+  methods: {
+    setBackground() {
+      return `body {
+        background: ${this.post?.background_color}
+      }`;
+    }
+  },
   head() {
     return {
       title: this.post.title + " - " + this.config.data.site_title,
+      style: [{ cssText: this.setBackground(), type: "text/css" }],
       meta: [
         {
           name: "og:title",
