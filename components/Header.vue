@@ -1,5 +1,8 @@
 <template>
   <header class="header">
+    <nuxt-link to="/">
+      <img :src="config.data.title_image.url" alt="nicole" />
+    </nuxt-link>
     <nav class="nav">
       <ul>
         <li v-for="item in config.data.main_menu" :key="item.label">
@@ -9,9 +12,6 @@
         </li>
       </ul>
     </nav>
-    <nuxt-link to="/">
-      <img :src="config.data.title_image.url" alt="nicole" />
-    </nuxt-link>
   </header>
 </template>
 
