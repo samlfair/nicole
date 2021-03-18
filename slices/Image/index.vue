@@ -1,28 +1,30 @@
 <template>
   <div class="box">
-    <prismic-link
-      :field="slice.primary.link"
-      v-if="slice.primary.link.link_type !== 'Any'"
-    >
-      <img
-        :style="widthStyle"
-        class="image"
-        :src="uncompressed()"
-        :alt="slice.primary.image.fixedWidth.url"
-        :width="slice.primary.image.fixedWidth.dimensions.width"
-        :height="slice.primary.image.fixedWidth.dimensions.height"
-      />
-    </prismic-link>
-    <template v-else>
-      <img
-        :style="widthStyle"
-        class="image"
-        :src="uncompressed()"
-        :alt="slice.primary.image.fixedWidth.url"
-        :width="slice.primary.image.fixedWidth.dimensions.width"
-        :height="slice.primary.image.fixedWidth.dimensions.height"
-      />
-    </template>
+    <div v-if="slice.primary.image.fixedWidth.url">
+      <prismic-link
+        :field="slice.primary.link"
+        v-if="slice.primary.link.link_type !== 'Any'"
+      >
+        <img
+          :alt="slice.primary.image.fixedWidth.url"
+          :src="uncompressed()"
+          class="image"
+          :style="widthStyle"
+          :width="slice.primary.image.fixedWidth.dimensions.height || `0`"
+          :height="slice.primary.image.fixedWidth.dimensions.height || `0`"
+        />
+      </prismic-link>
+      <template v-else>
+        <img
+          :style="widthStyle"
+          class="image"
+          :src="uncompressed()"
+          :alt="slice.primary.image.fixedWidth.url"
+          :width="slice.primary.image.fixedWidth.dimensions.width || `0`"
+          :height="slice.primary.image.fixedWidth.dimensions.height || `0`"
+        />
+      </template>
+    </div>
   </div>
 </template>
 
@@ -41,7 +43,7 @@ export default {
   methods: {
     uncompressed() {
       const { url } = this.slice.primary.image.fixedWidth;
-      return url.replace("compress", "");
+      return url?.replace("compress", "");
     }
   }
 };
