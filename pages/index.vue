@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header :config="config" />
-    <slice-zone type="post" uid="home" :params="{fetchLinks: 'post.title'}" />
+    <slice-zone type="post" uid="home" :params="{ fetchLinks: 'post.title' }" />
     <Footer :text="config.data.footer" />
   </div>
 </template>
@@ -30,9 +30,17 @@ export default {
       error({ statusCode: 404, message: "Page not found" });
     }
   },
+  methods: {
+    setBackground() {
+      return `body {
+        background: ${this.post?.background_color}
+      }`;
+    }
+  },
   head() {
     return {
       title: this.config.data.site_title + " - " + this.config.data.tagline,
+      style: [{ cssText: this.setBackground(), type: "text/css" }],
       meta: [
         {
           name: "og:title",
