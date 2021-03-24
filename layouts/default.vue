@@ -8,7 +8,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500&display=swap");
 
 .layout {
-  max-width: 850px;
+  max-width: 800px;
   margin: auto;
   padding: 20px;
 }

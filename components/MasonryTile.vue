@@ -17,13 +17,15 @@ export default {
   },
   computed: {
     styles() {
-      const { url, dimensions } = this.post.data.thumbnail.fixedWidth;
-      const backgroundImage = `url("${url}")`;
-      const backgroundSize = "cover";
-      const width = "100%";
-      const paddingTop = (dimensions.height / dimensions.width) * 100 + "%";
-      // const position = 'relative'
-      return { backgroundImage, backgroundSize, paddingTop };
+      if (this.post.data.thumbnail) {
+        const { url, dimensions } = this.post.data.thumbnail.fixedWidth;
+        const backgroundImage = `url("${url}")`;
+        const backgroundSize = "cover";
+        const width = "100%";
+        const paddingTop = (dimensions.height / dimensions.width) * 100 + "%";
+        // const position = 'relative'
+        return { backgroundImage, backgroundSize, paddingTop };
+      }
     }
   }
 };

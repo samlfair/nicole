@@ -1,11 +1,13 @@
 <template>
   <div>
     <Header :config="config" />
-    <Button
-      v-if="post.parent_page.id"
-      :label="'◀︎ back'"
-      :link="post.parent_page"
-    />
+    <div class="button">
+      <Button
+        v-if="post.parent_page.id"
+        :label="'◀︎ back'"
+        :link="post.parent_page"
+      />
+    </div>
     <slice-zone
       type="post"
       :uid="$route.params.uid"
@@ -78,3 +80,11 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.button {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+}
+</style>
