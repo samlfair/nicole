@@ -14,9 +14,13 @@ export default {
     ],
     link: [
       {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com"
+      },
+      {
         rel: "stylesheet",
         href:
-          "https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&display=swap"
+          "https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500&display=swap"
       }
     ],
     script: [
