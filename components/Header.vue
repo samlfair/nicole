@@ -67,12 +67,9 @@ export default {
       justify-content: flex-end;
       flex-wrap: wrap-reverse;
     }
-    font-size: 0.7rem;
     padding-top: 1.5rem;
     color: black;
-    text-transform: uppercase;
     max-width: 300px;
-    font-weight: 500;
     li {
       line-height: 25px;
     }

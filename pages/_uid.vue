@@ -1,6 +1,11 @@
 <template>
   <div>
     <Header :config="config" />
+    <Button
+      v-if="post.parent_page.id"
+      :label="'◀︎ back'"
+      :link="post.parent_page"
+    />
     <slice-zone
       type="post"
       :uid="$route.params.uid"
@@ -13,6 +18,7 @@
 </template>
 
 <script>
+import Button from "./../components/Button";
 import SliceZone from "vue-slicezone";
 import { Header, Footer } from "~/components";
 
@@ -21,7 +27,8 @@ export default {
   components: {
     SliceZone,
     Header,
-    Footer
+    Footer,
+    Button
   },
   async asyncData({ $prismic, params, error }) {
     const config = (
