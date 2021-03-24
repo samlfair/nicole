@@ -20,9 +20,6 @@ export default {
   p {
     margin-top: 1rem;
     line-height: 1.5rem;
-    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
-      helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial,
-      sans-serif;
   }
   h2 {
     font-size: 2rem;

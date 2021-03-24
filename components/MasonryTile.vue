@@ -57,6 +57,7 @@ h2 {
   padding: 1em;
   font-size: 1.3rem;
   // margin-top: 2rem;
+  text-align: center;
   font-weight: 700;
   font-family: "Fraunces", serif;
   font-style: italic;
