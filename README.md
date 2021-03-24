@@ -4,7 +4,19 @@ Website for Nicole G. Built with Nuxt and Prismic.
 
 ## To Do
 
-- [ ] Video Slice
+- [x] grainy, blurry images
+- [x] images getting stretched
+- [x] reverse nav
+- [x] adding video
+- [x] change page background
+- [x] mobile responsive
+- [x] back button on posts
+- [x] add domain name
+- [x] option to center align text
+- [x] change font for body copy
+- [ ] text to left of image
+- [ ] change column count on grid (beer labels)
+- [ ] contact form
 
 Site structure:
 
@@ -24,22 +36,3 @@ Site structure:
     ├── About (text, photo, form)
     └── Shop
 ```
-
-## Build Setup
-
-```bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
