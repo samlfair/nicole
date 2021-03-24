@@ -13,13 +13,15 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-// @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,200;1,200&display=swap");
 
 ::v-deep {
   p {
     margin-top: 1rem;
     line-height: 1.5rem;
+  }
+  .center {
+    text-align: center;
   }
   h2 {
     font-size: 2rem;

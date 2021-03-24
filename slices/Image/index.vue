@@ -62,6 +62,7 @@ export default {
 .image {
   width: 100%;
   height: auto;
-  // max-width: 500px;
+  display: block;
+  margin: auto;
 }
 </style>
