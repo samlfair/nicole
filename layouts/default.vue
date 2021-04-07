@@ -11,6 +11,7 @@
   max-width: 800px;
   margin: auto;
   padding: 20px;
+  min-height: 100vh;
 }
 
 ::v-deep .slice-image-row {
