@@ -13,8 +13,6 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,200;1,200&display=swap");
-
 ::v-deep {
   p {
     margin-top: 1rem;
@@ -27,14 +25,13 @@ export default {
     font-size: 2rem;
     margin-top: 2rem;
     font-weight: 700;
-    font-family: "Fraunces", serif;
+    font-family: "Tajawal", sans-serif;
   }
   h3 {
     font-size: 1.7rem;
     margin-top: 2rem;
     font-weight: 700;
-    font-family: "Fraunces", serif;
-    font-style: italic;
+    font-family: "Tajawal", sans-serif;
   }
 }
 </style>

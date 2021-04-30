@@ -32,8 +32,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,200;1,200&display=swap");
-
 .image {
   position: relative;
 }
@@ -61,7 +59,7 @@ h2 {
   // margin-top: 2rem;
   text-align: center;
   font-weight: 700;
-  font-family: "Fraunces", serif;
+  font-family: "Tajawal", sans-serif;
   font-style: italic;
   color: white;
   text-shadow: 0px 0px 10px rgba(1, 1, 1, 0.6);
