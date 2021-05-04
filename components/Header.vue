@@ -62,14 +62,15 @@ export default {
     display: flex;
     flex-direction: row;
     gap: 14px;
-    justify-content: space-around;
+    justify-content: center;
+    flex-wrap: wrap;
     @media (min-width: 700px) {
       justify-content: flex-end;
       flex-wrap: wrap-reverse;
+      max-width: 300px;
     }
     padding-top: 1.5rem;
     color: black;
-    max-width: 300px;
     li {
       line-height: 25px;
     }
