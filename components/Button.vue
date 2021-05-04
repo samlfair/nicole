@@ -24,8 +24,8 @@ a {
   padding: 8px 7px 4px 7px;
   border: 2px solid rgb(48, 48, 48);
   &.nuxt-link-active {
-    border: 2px solid #c2c2c2;
-    color: #c2c2c2;
+    border: 2px solid #757575;
+    color: #757575;
     cursor: default;
   }
   &:hover:not(.nuxt-link-active) {

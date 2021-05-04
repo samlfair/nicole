@@ -3,6 +3,9 @@ export default {
   target: process.env.TARGET || "server",
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
+    htmlAttrs: {
+      lang: "en"
+    },
     meta: [
       {
         charset: "utf-8"

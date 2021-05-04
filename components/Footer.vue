@@ -6,8 +6,8 @@
 export default {
   name: "Footer",
   props: {
-    text: String,
-  },
+    text: String
+  }
 };
 </script>
 
@@ -15,7 +15,7 @@ export default {
 .footer {
   text-align: center;
   font-size: 0.8rem;
-  color: #999;
+  color: #757575;
   padding: 8rem 20% 4rem;
 }
 </style>
