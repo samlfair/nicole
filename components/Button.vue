@@ -35,4 +35,10 @@ a {
     box-shadow: 2px 2px #c2c2c2;
   }
 }
+
+@media only screen and (max-width: 930px) {
+  a {
+    background: rgba(255, 255, 255, 1);
+  }
+}
 </style>
