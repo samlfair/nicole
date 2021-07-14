@@ -59,9 +59,12 @@ export default {
 
 .nav {
   ul {
+    // Negative margin
+    margin: -7px;
     display: flex;
     flex-direction: row;
-    gap: 14px;
+    // Gap, not yet useable :'(
+    // gap: 14px;
     justify-content: center;
     flex-wrap: wrap;
     @media (min-width: 700px) {
@@ -73,6 +76,8 @@ export default {
     color: black;
     li {
       line-height: 25px;
+      // Margin (equal to half of gap)
+      margin: 7px;
     }
   }
 }
