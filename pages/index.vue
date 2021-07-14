@@ -52,7 +52,7 @@ export default {
         { name: "robots", content: "index, follow" },
         {
           property: "og:image",
-          content: this.config.thumbnail.social.url
+          content: this.post.thumbnail.social.url
         }
       ],
       link: [
