@@ -9,7 +9,6 @@
 <script>
 import SliceZone from "vue-slicezone";
 import { Header, Footer } from "~/components";
-import SocialButtons from "~/slices/SocialButtons"
 
 export default {
   name: "Home",

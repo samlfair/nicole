@@ -1,7 +1,7 @@
 <template>
   <div class="buttons">
     <a
-      v-for="button in slice2.items"
+      v-for="button in slice.items"
       :key="button.link.url"
       :href="button.link.url"
       target="_blank"
@@ -17,23 +17,6 @@
 <script>
 export default {
   name: "SocialButtons",
-  data: () => { return {
-    slice2: {
-      "primary": {},
-      "items": [
-        {
-          "icon": "instagram-square",
-          "color": "#8a3ab9",
-          "link": {
-            "link_type": "Web",
-            "url": "https://instagram.com/nicoliogi"
-          }
-        }
-      ],
-      "slice_type": "socialbuttons",
-      "slice_label": null
-    }
-  }},
   props: {
     slice: Object
   },
@@ -50,10 +33,13 @@ export default {
   width: 100%;
   display: flex;
   justify-content: center;
-}
-
-.icon {
-  width: 50px;
-  height: 50px;
+  flex-wrap: wrap;
+  a {
+    margin: 0 1vw;
+  }
+  .icon {
+    width: 50px;
+    height: 50px;
+  }
 }
 </style>
