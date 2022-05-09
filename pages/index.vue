@@ -9,13 +9,15 @@
 <script>
 import SliceZone from "vue-slicezone";
 import { Header, Footer } from "~/components";
+import SocialButtons from "~/slices/SocialButtons"
 
 export default {
   name: "Home",
   components: {
     SliceZone,
     Header,
-    Footer
+    Footer,
+    SocialButtons
   },
   async asyncData({ $prismic, params, error }) {
     const config = (
