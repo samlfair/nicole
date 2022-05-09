@@ -15,8 +15,7 @@ export default {
   components: {
     SliceZone,
     Header,
-    Footer,
-    SocialButtons
+    Footer
   },
   async asyncData({ $prismic, params, error }) {
     const config = (
